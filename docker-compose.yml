@@ -1,0 +1,19 @@
+---
+version: "3.8"
+services:
+  code-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: custom-code-server
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - PASSWORD=PASS # Change this!
+      - SUDO_PASSWORD=PASS # Change this!
+    volumes:
+      - ./projects:/config/workspace/projects
+    ports:
+      - "8443:8443"
+    restart: unless-stopped
