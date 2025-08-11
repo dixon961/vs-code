@@ -55,7 +55,7 @@ RUN curl -L "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-
     rm /tmp/gradle.zip
 
 #--------------------------------------------------------------------------
-# 3. Install VS Code Extensions
+# 5. Install VS Code Extensions
 #--------------------------------------------------------------------------
 # Grant the 'abc' user ownership of its home directory before switching to it
 RUN chown -R abc:abc /config
@@ -89,7 +89,7 @@ RUN for ext in \
 USER root
 
 #--------------------------------------------------------------------------
-# 5. Set Environment Variables
+# 6. Set Environment Variables
 #--------------------------------------------------------------------------
 ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ENV GRADLE_HOME=/opt/gradle
